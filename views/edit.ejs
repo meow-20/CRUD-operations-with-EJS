@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <main class="w-full h-screen bg-zinc-950 text-white p-10">
+        <h1 class="text-blue-800 text-5xl mb-10">Edit User</h1>
+        <div class="flex gap-3">
+        <form action="/edit/<%= user._id %>" method="post" class="w-auto">
+            <input class="px-3 py-2 border-2 border-zinc-700 bg-zinc-900 outline-none rounded-lg mr-2 mb-3" name="newname" type="text" placeholder="Name" value="<%= user.name %>"><br>
+            <input class="px-3 py-2 border-2 border-zinc-700 bg-zinc-900 outline-none rounded-lg mr-2 mb-3" name="newemail" type="text" placeholder="Email" value="<%= user.email %>"><br>
+            <input class="px-3 py-2 border-2 border-zinc-700 bg-zinc-900 outline-none rounded-lg mb-10" name="newdp" type="text" placeholder="Image URL" value="<%= user.dp %>"><br>
+            <input class="px-3 py-2 border-none bg-orange-800 rounded-lg hover:cursor-pointer" type="submit" value="Update User">
+        </form>
+        <div>
+            <div class="h-64 w-64 rounded-xl overflow-hidden inline-block">
+                <img class="w-full h-full object-cover object-center" src="<%= user.dp %>" alt="">
+            </div>
+            <p class="text-zinc-500">Old Profile Picture.</p>
+        </div>
+    </div>
+    </main>
+</body>
+</html>
